@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Galeria Imagenes 3D</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <div class = "box">
+            <span style = "--i:1"><img src="Imagen1.jpg" width="300" height="300"></span>
+            <span style = "--i:2"><img src="Imagen2.jpg" width="300" height="300"></span>
+            <span style = "--i:3"><img src="Imagen3.jpg" width="300" height="300"></span>
+            <span style = "--i:4"><img src="Imagen4.jpg" width="300" height="300"></span>
+            <span style = "--i:5"><img src="Imagen5.jpg" width="300" height="300"></span>
+            <span style = "--i:6"><img src="Imagen6.jpg" width="300" height="300"></span>
+            <span style = "--i:7"><img src="Imagen7.jpg" width="300" height="300"></span>
+            <span style = "--i:8"><img src="Imagen8.jpg" width="300" height="300"></span>
+        </div>
+        <div class="btns">
+            <div class="btn prev"></div>
+            <div class="btn next"></div>
+        </div>
+    </div>
+    <script>
+        let prev = document.querySelector('.prev');
+        let next = document.querySelector('.next');
+        let box = document.querySelector('.box');
+
+        let degrees = 0;
+
+        prev.addEventListener('click',function(){
+            degrees += 45;
+            box.style = `transform: perspective(1000px) rotateY(${degrees}deg)`;
+        })
+
+        next.addEventListener('click',function(){
+            degrees -= 45;
+            box.style = `transform: perspective(1000px) rotateY(${degrees}deg)`;
+        })
+    </script>
+</body>
+</html>
